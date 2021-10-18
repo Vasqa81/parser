@@ -22,11 +22,12 @@ for i in url_item:
     j+=1
     if j == 10:
         break
-    i_text = i.text
+    i_text = i.textc
     url_news = i.get("href")
     soup_news = BeautifulSoup(pars(url_news), 'lxml')
     text_news = soup_news.find("div", class_="entry-content clear")
-    if ('ФАПК “Якутия”') in text_news.text:
+    s = "Для Вас нет отключений"
+    if ('103') in text_news.text:
         s = text_news.text
 
 bot = telebot.TeleBot('1967252257:AAG7rV1tfkXl2wqtIYl5lK77olUmOwGmwY8')
